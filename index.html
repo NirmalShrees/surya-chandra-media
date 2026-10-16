@@ -43,8 +43,19 @@
       "knowsLanguage": ["ne", "en"]
     }
     </script>
-    <script type="module" crossorigin src="./assets/index-D_2a2QGD.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CBFxCcDV.css">
+    <script>
+      // Ensure directory URLs have a trailing slash on GitHub Pages
+      // e.g. https://user.github.io/repo -> https://user.github.io/repo/
+      // Without this, relative asset paths './assets/...' resolve to root domain causing a blank white screen
+      (function() {
+        var p = window.location.pathname;
+        if (p.length > 1 && !p.endsWith('/') && !p.split('/').pop().includes('.')) {
+          window.location.replace(p + '/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index.css">
   </head>
   <body class="bg-stone-50 text-stone-900 font-sans antialiased selection:bg-orange-500 selection:text-white">
     <div id="root"></div>
